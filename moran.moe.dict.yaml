@@ -1,0 +1,13 @@
+# Rime dictionary
+# encoding: utf-8
+# license: public domain
+# https://github.com/outloudvi/mw2fcitx
+# 原词典释出到公共域，本词典亦释出到公共域发布
+
+---
+name: moran.moe
+version: "20240709"
+sort: by_weight
+use_preset_vocabulary: false
+...
+

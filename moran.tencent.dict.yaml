@@ -1,0 +1,19 @@
+# Rime dictionary
+# encoding: utf-8
+
+# 该词库改编自雾凇拼音 [1] 项目，源自腾讯词向量百万词库 [2]。
+# [1] https://github.com/iDvel/rime-ice
+# [2] https://ai.tencent.com/ailab/nlp/en/embedding.html
+# 依 CC BY 3.0 协议改编再发行。
+# 魔然版将原词库繁体化、注音、手动矫正若干错误，有大量删减。
+
+---
+name: moran.tencent
+version: "20240616"
+sort: by_weight
+columns:
+  - text
+  - code
+  - weight
+...
+

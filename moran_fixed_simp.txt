@@ -1,0 +1,17 @@
+# Rime table
+#@/db_name	moran_fixed_simp
+#@/db_type	tabledb
+#@/rime_version	1.11.2
+#@/tick	19
+保存	bkcp	3
+不好	buhk	1
+的	d	1
+单独	djdu	1
+么	me	1
+皮草	pick	1
+使用	uiys	1
+中	vs	1
+玩	wj	1
+为什么	wsm	1
+委身	wzuf	2
+夜宵	yexc	1

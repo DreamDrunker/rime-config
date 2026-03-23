@@ -1,0 +1,32 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# Luna Pinyin Extended Dictionary(Hanyu Dictionary) - 明月拼音扩充词库（汉语大词典）
+#
+#   瑾昀 <cokunhui@gmail.com>
+#
+# Thanks to the following works:
+#
+# * 汉语大词典
+#   由mdx格式的词典提取词条而得，去除与rime内建八股文词库（即essay.txt）、朙月拼音扩充词库（基本）相同的词汇，剩20万余条。
+#
+# 部署位置：
+# ~/.config/ibus/rime  (Linux)
+# ~/Library/Rime  (Mac OS)
+# %APPDATA%\Rime  (Windows)
+#
+# 于重新部署后生效
+#
+
+# 注（魔然）：有添削。
+
+---
+name: moran.hanyu
+version: "2013.11.01+1"
+sort: by_weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - weight
+...
+

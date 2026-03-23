@@ -1,0 +1,111 @@
+patch:
+  style:
+    vertical: true
+  "preset_color_schemes/MyStyleMi":
+    name: 蓝色／MyStyleMi
+    author: Mintimate <"Mintimate's Blog">
+    text_color:  0x3B3B3B #拼音串
+    candidate_text_color: 0x424242 # 非第一候选项
+    back_color: 0xefefef # 背景
+    border_color: 0xC0C0C0 # 边框颜色
+    shadow_color: 0xC0C0C0  # 边框阴影
+    hilited_text_color:  0x3B3B3B # 拼音串高亮#138DCE
+    hilited_candidate_back_color:  0xb89522 # 第一候选项背景
+    hilited_candidate_text_color: 0xefefef # 第一候选项
+    hilited_comment_text_color: 0xefefef # 注解文字高亮
+    comment_text_color: 0xcac9c8 # 注解文字
+    label_color: 0xcac9c8 # 预选栏编号颜色
+    
+  "preset_color_schemes/MyStyleMi绿色":
+    name: 绿色／MyStyleMi
+    author: Mintimate <"Mintimate's Blog">
+    text_color: 0x0A9100 #拼音串
+    candidate_text_color: 0x424242 # 非第一候选项
+    back_color: 0xefefef # 背景
+    border_color: 0xC0C0C0 # 边框颜色
+    shadow_color: 0xC0C0C0  # 边框阴影
+    hilited_text_color: 0x0A9100 # 拼音串高亮#138DCE
+    hilited_back_color: 0xefefef # 拼音串高亮背景
+    hilited_candidate_back_color: 0x0A9100 # 第一候选项背景
+    hilited_candidate_text_color: 0xefefef # 第一候选项
+    hilited_comment_text_color: 0xefefef # 注解文字高亮
+    comment_text_color: 0xcac9c8 # 注解文字
+    label_color: 0xcac9c8 # 预选栏编号颜色
+    
+  "preset_color_schemes/MyStyleMi橙色":
+    name: 橙色／MyStyleMi
+    author: Mintimate <"Mintimate's Blog">
+    text_color:  0x3B3B3B #拼音串
+    candidate_text_color: 0x424242 # 非第一候选项
+    back_color: 0xefefef # 背景
+    border_color: 0xC0C0C0 # 边框颜色
+    shadow_color: 0xC0C0C0  # 边框阴影
+    hilited_text_color:  0x3B3B3B # 拼音串高亮#138DCE
+    hilited_candidate_back_color:  0x4F4FFF # 第一候选项背景
+    hilited_candidate_text_color: 0xefefef # 第一候选项
+    hilited_comment_text_color: 0xefefef # 注解文字高亮
+    comment_text_color: 0xcac9c8 # 注解文字
+    label_color: 0xcac9c8 # 预选栏编号颜色
+    
+    
+  "preset_color_schemes/MyStyleMi粉色":
+    name: 粉色／MyStyleMi
+    author: Mintimate <"Mintimate's Blog">
+    text_color:  0x3B3B3B #拼音串
+    candidate_text_color: 0x424242 # 非第一候选项
+    back_color: 0xefefef # 背景
+    border_color: 0xC0C0C0 # 边框颜色
+    shadow_color: 0xC0C0C0  # 边框阴影
+    hilited_text_color:  0x3B3B3B # 拼音串高亮#138DCE
+    hilited_candidate_back_color:  0x9B5ADB # 第一候选项背景
+    hilited_candidate_text_color: 0xefefef # 第一候选项
+    hilited_comment_text_color: 0xefefef # 注解文字高亮
+    comment_text_color: 0xcac9c8 # 注解文字
+    label_color: 0xcac9c8 # 预选栏编号颜色
+    
+  "preset_color_schemes/MyStyleMiDark":
+    name: 黑蓝／MyStyleMiDark
+    author: Mintimate <"Mintimate's Blog">
+    text_color: 0x6495ed #拼音串
+    candidate_text_color: 0xefefef # 非第一候选项
+    border_color: 0xC0C0C0 # 边框颜色
+    shadow_color: 0xC0C0C0  # 边框阴影
+    border_color: 0x424242 # 边框
+    hilited_text_color: 0xc6c01a # 拼音串高亮
+    hilited_back_color: 0x424242 # 拼音串高亮背景
+    hilited_candidate_back_color: 0xc6c01a # 第一候选项背景
+    hilited_candidate_text_color: 0xefefef # 第一候选项
+    hilited_comment_text_color: 0xffffff # 注解文字高亮
+    comment_text_color: 0xefefef #注解文字
+    label_color: 0xefefef # 预选栏编号颜色
+
+  
+
+
+  "style/color_scheme_dark": MyStyleMiDark  # 深色主题配色方案
+  "style/color_scheme": MyStyleMi # 浅色主题配色方案
+  "style/display_tray_icon": true # 显示托盘图标
+  "style/font_face": "Microsoft YaHei" # 字体样式为"Microsoft YaHei"
+  "style/font_point": 14 # 字体大小为14pt
+  "style/label_font_point": 14 # 候选词数字大小为14
+  "style/horizontal": false # 横向展示候选词
+  "style/vertical": true # 纵向展示候选词
+  "style/inline_preedit": false #  内嵌预编辑，true，表示单行。false双行
+  "style/layout/corner_radius": 5 # 窗口圆角半径为8
+  "style/layout/border": 1 # 窗口边界高度为0（无边界效果）1有边框
+  "style/layout/shadow_radius": 1 # 阴影的模糊半径
+  "style/layout/shadow_offset_x": 2 # 阴影向右偏移
+  "style/layout/shadow_offset_y": 2 # 阴影向下便宜
+  "style/layout/border_width": 1 # 窗口边界宽度为0（无边界效果）1有边框
+  "style/layout/candidate_spacing": 14 # 候选词之间的间距为14
+  "style/layout/hilite_padding": 1 # 高亮区域内边距为8
+  "style/layout/hilite_spacing": 3 # 高亮区域之间的间距为3d
+  "style/layout/margin_x": 8 # 水平方向外边距为8
+  "style/layout/margin_y": 6 # 垂直方向外边距为
+  "style/layout/round_corner": 3 # 窗口圆角的程度为5dde
+  "style/layout/spacing": 5 # 候选词水平间距为10
+  
+  
+  
+
+

@@ -1,0 +1,182 @@
+schema:
+  schema_id: moran_fixed
+  name: 汉心·字詞
+  version: "20240616"
+  icon: "hanxinkuaida.ico"           # string 方案图标，格式： .ico
+  ascii_icon: "aaa.ico"           # string 方案图标，格式： .ico
+  author:
+    - 
+    - 方案製作：ksqsf
+  description: |
+    四碼唯一自動上屏、五碼頂屏的碼表式輸入方式。
+
+switches:
+  - name: ascii_mode
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: traditionalization
+    states: [ 汉字, 漢字 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+  - name: emoji
+    states: [ 🈚, 🈶 ]
+  - name: chaifen
+    states: [ 不拆, 扌斥 ]
+  - name: unicode_comment
+    states: [ U關, U開 ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - affix_segmentor@zkci
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - reverse_lookup_translator
+    - table_translator@custom_phrase       # 自定義短語
+    - table_translator
+    - table_translator@fixed
+    - table_translator@zkci
+    - history_translator@repeat
+    - history_translator@quick_repeat
+  filters:
+    - simplifier@chaifen
+    - simplifier
+    - simplifier@emoji
+    #- lua_filter@*moran_quick_code_hint  # 簡碼提示功能，詳見文件末
+    - uniquifier
+
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyz=;"
+  delimiter: " '"
+  max_code_length: 4
+  auto_select: true
+  auto_select_pattern: ^;(\w|;)+|^\w{3}\w+
+  auto_clear: max_length # manual | auto | max_length
+  algebra:
+    __patch:
+      - moran:/algebra/user_force_top?
+      - moran:/algebra/user_force_bottom?
+
+translator:
+  dictionary: moran_fixed_simp
+  db_class: tabledb
+  enable_charset_filter: false
+  enable_sentence: false
+  enable_completion: false
+  enable_user_dict: false
+  initial_quality: 100000
+
+fixed:
+  dictionary: moran_fixed_simp
+  db_class: tabledb
+  enable_charset_filter: false
+  enable_sentence: false
+  enable_completion: false
+  enable_user_dict: true
+  enable_encoder: true
+  encode_commit_history: false   # 是否開啓自動造詞
+  initial_quality: 1000
+
+custom_phrase: # 自定義短語
+  dictionary: ""
+  user_dict: moran_custom_phrases
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 500000
+
+zkci:           # 造詞
+  tag: zkci
+  db_class: tabledb
+  dictionary: moran_fixed_simp
+  enable_user_dict: false
+  enable_charset_filter: false
+  enable_completion: false
+  enable_sentence: true
+  enable_encoder: false
+  max_phrase_length: 4
+  prefix: "'"
+  tips: 〔造詞〕
+  initial_quality: 10
+
+repeat:        # 重複上屏
+  input: "="
+  size: 1
+  initial_quality: 0
+
+quick_repeat:  # 快速重複上屏
+  input: ";d"
+  size: 1
+  initial_quality: 0
+
+simplifier:
+  option_name: traditionalization
+  opencc_config: s2t.json
+
+emoji:
+  opencc_config: moran_emoji.json
+  option_name: emoji
+  tips: all
+
+chaifen:
+  option_name: chaifen
+  opencc_config: moran_chaifen.json
+  tips: char
+  show_in_comment: true
+  comment_form:
+    - "xform/-/ /"
+
+reverse_lookup:
+  dictionary: moran.chars
+  enable_user_dict: false
+  tips: 〔通配〕
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "(^(`[a-z`]+))|(^([a-z]{2}(`[a-z`]?|[a-z`]`|[a-z][a-z]`)))"
+    zkci: "^[a-z]*'[a-z']*$"
+    punct: '^/([0-9]0?|[A-Za-z]+)$'
+
+punctuator:
+  import_preset: symbols
+
+key_binder:
+  import_preset: default
+  custom_bindings:
+    __append:
+      # 在這裏添加只在本方案中生效的按鍵綁定
+      # 取消下行註釋，按住 = 不放可以連續上屏
+      # - { when: has_menu, accept: '=', send: 4 }  # 4 對應於 history_translator 的輸出位置，修改 symbols.yaml 後需要作相應修改
+  bindings:
+    __patch:
+      - :/key_binder/custom_bindings?
+      - moran:/key_bindings/moran_switches
+      - moran:/key_bindings/moran_semicolon_for_2
+
+# 默認不開啓語言模型
+# 在 moran_fixed.custom.yaml 中輸入如下內容以開啓
+#   patch:
+#     __include: moran:/octagram/enable_for_fixed
+# 輸入「水滿則」後繼續輸入 yidy 首選爲「溢」則說明已生效。
+
+moran:
+  # 簡快碼提示濾鏡
+  # 例如，在輸入 jqrf 時，「機器人」候選會增加「⚡jqr」提示，表示該词有簡碼打法。
+  # 注意：需先解除 engine/filters 中 lua_filter@*moran_quick_code_hint 行的註釋才能生效！！
+  enable_quick_code_hint: true      # 在解除 lua_filter 註釋前不生效！
+  quick_code_hint_skip_chars: true  # 是否跳過單字, 字詞模式中建議不提示單字避免干擾

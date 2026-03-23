@@ -1,0 +1,59 @@
+# Rime dictionary
+# encoding: utf-8
+# license: CC-BY-SA 4.0
+
+---
+name: moran_fixed
+version: "20240616"
+sort: by_weight
+columns:
+  - text
+  - code
+  - stem
+  - weight
+  - comment
+encoder:
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaCaCb"
+    - length_in_range: [4, 32]
+      formula: "AaBaCaZa"
+import_tables:
+  - moran_fixed.symbols
+...
+
+#----------標點符號----------#
+# 第一排
+：“	;q
+？	;w
+（	;e
+）	;r
+~	;t
+·	;y
+『	;u
+』	;i
+〖	;o
+〗	;p
+# 第二排
+！	;a
+……	;s
+#重複上屏	;d
+“	;f
+”	;g
+‘	;h
+’	;j
+——	;k
+%	;l
+；	;;
+# 第三排
+。”	;z
+？”	;x
+！”	;c
+【	;v
+】	;b
+《	;n
+》	;m
+
+#----------詞庫----------#

@@ -1,0 +1,18 @@
+patch:
+  menu/page_size: 3
+  ascii_composer/switch_key/Caps_Lock: noop
+  ascii_composer/switch_key/Shift_L: noop
+  ascii_composer/switch_key/Shift_R: noop
+  key_binder/bindings/+:
+    - {accept: semicolon, send: 2, when: has_menu}
+    - {accept: apostrophe, send: 3, when: has_menu}
+  schema_list:
+    - schema: moran_aux        # 汉心·輔篩（自然码双拼+汉心辅助码）
+    - schema: moran            # 魔然
+    - schema: moran_fixed      # 魔然·固詞
+    - schema: tiger            # 虎码
+    - schema: zrlf             # 自然两分
+  punctuator/full_shape:
+    "/": "/"
+  punctuator/half_shape:
+    "/": "/"

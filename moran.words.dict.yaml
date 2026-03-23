@@ -1,0 +1,17 @@
+# Rime dictionary
+# encoding: utf-8
+# license: CC-BY 4.0
+
+---
+name: moran.words
+version: "20240616"
+sort: by_weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - weight
+  - code
+...
+
+
+ 
